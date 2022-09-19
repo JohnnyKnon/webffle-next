@@ -1,18 +1,336 @@
+/* Header
+--------------------------------- */
 .header {
   /* position */
   position: fixed;
   /* size */
   width: 100%;
   height: 80px;
-  border: 1px solid black;
+  /* border */
+  border-bottom: 1px solid var(--color-light-grey);
+  /* background */
+  background-color: var(--color-white);
+  /* z-index */
+  z-index: 1000;
+}
+/* Logo */
+.logo {
+  /* font */
+  font-size: 1.6rem;
+  font-weight: var(--weight-bold);
+  color: var(--main-color);
+  /* z-index */
+  z-index: 1000;
 }
 
+/* Mobile Nav
+---------------------------------- */
 .nav {
+  /* max-size */
+  max-width: 1600px;
   /* size */
-  width: 100%;
+  width: 90%;
   height: 100%;
+  /* margin */
+  margin: 0 auto;
   /* flex */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+}
+
+.navWrapper {
+  /* position */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: centers;
+  align-items: center;
+  /* z-index */
+  z-index: 1000;
+  /* transform */
+  transform: translate(-50%, -50%);
+}
+
+/* Nav Items ( Off ) */
+.navWrapper ul {
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  /* margin */
+  margin-left: -40px;
+}
+
+.navItems {
+  /* display */
+  display: none;
+  /* opacity */
+  opacity: 0;
+}
+
+.navWrapper ul li a {
+  /* position */
+  position: relative;
+  /* font */
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+
+.navWrapper ul li a::after {
+  content: '';
+  /* display */
+  display: inline-block;
+  /* position */
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  /* size */
+  width: 0;
+  height: 1px;
+  /* background */
+  background-color: var(--color-white);
+  /* transition */
+  transition: all 0.2s ease-in;
+}
+
+.navWrapper ul a:hover::after {
+  /* size */
+  width: 100%;
+}
+
+/* language nav item */
+.langWrapper {
+  /* display */
+  display: none;
+  /* font */
+  font-size: 1rem;
+  color: var(--color-light-grey);
+  /* flex */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* opacity */
+  opacity: 0;
+}
+
+/* Nav Items ( On ) 
+-------------------------------------*/
+.navItemsEnter {
+  /* display */
+  display: block;
+  /* animation */
+  animation-duration: 0.5s;
+  animation-name: itemsEnter;
+  animation-fill-mode: forwards;
+}
+.navItemsEnter:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+
+.navItemsEnter:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+
+.navItemsEnter:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+
+.navItemsEnter:nth-of-type(4) {
+  animation-delay: 0.8s;
+}
+
+.navItemsExit {
+}
+
+/* language nav items */
+.langWrapperEnter {
+  /* animation */
+  animation-duration: 0.5s;
+  animation-name: itemsEnter;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.langWrapperExit {
+}
+
+@keyframes itemsEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile backdrop (Off)
+------------------------------------ */
+
+.mobileBG {
+  /* display */
+  display: none;
+  /* position */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* size */
+  width: 100%;
+  height: 100vh;
+  /* opacity */
+  opacity: 0;
+  /* background */
+  background-color: rgba(0, 0, 0, 0.715);
+  /* z-index */
+  z-index: 900;
+}
+
+.mobileBGExit {
+  /* display */
+  display: block;
+  /* animation */
+  animation-name: mobileBackdropExit;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.2s;
+}
+
+@keyframes mobileBackdropExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    display: none;
+    opacity: 0;
+  }
+}
+
+/* Mobile backdrop(On)
+------------------------------------ */
+.mobileBGEnter {
+  /* display */
+  display: block;
+  /* animation */
+  animation-name: mobileBackdropEnter;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.2s;
+}
+
+@keyframes mobileBackdropEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Toggle Btn ( Toggle Off )
+----------------------------------- */
+
+.toggleBtn {
+  /* padding */
+  padding: 10px;
+  /* z-index */
+  z-index: 1000;
+  /* mix-blend-mode */
+  mix-blend-mode: difference;
+}
+
+.toggleLines {
+  /* display */
+  display: block;
+  /* size */
+  width: 30px;
+  height: 2px;
+  /* margin */
+  margin-bottom: 8px;
+  /* background */
+  background-color: var(--color-white);
+}
+
+.toggleLines:nth-child(3) {
+  margin-bottom: 0;
+}
+
+/* Mobile Toggle Btn ( Toggle On )
+----------------------------------- */
+
+/* TOP */
+.toggleLinesTopEnter {
+  /* animation */
+  animation-name: topEnter;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+}
+
+.toggleLinesTopExit {
+  /* animation */
+  animation-name: topExit;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+}
+
+@keyframes topEnter {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: translateY(5px) rotate(45deg);
+  }
+}
+
+@keyframes topExit {
+  from {
+    transform: translateY(5px) rotate(45deg);
+  }
+  to {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+/* MIDDLE */
+.toggleLinesMiddle {
+  display: none;
+}
+
+/* BOTTOM */
+.toggleLinesBottomEnter {
+  /* animation */
+  animation-name: bottomEnter;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+}
+
+.toggleLinesBottomExit {
+  /* animation */
+  animation-name: bottomExit;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  animation-duration: 0.2s;
+}
+
+@keyframes bottomEnter {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+}
+
+@keyframes bottomExit {
+  from {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+  to {
+    transform: translateY(0) rotate(0);
+  }
 }

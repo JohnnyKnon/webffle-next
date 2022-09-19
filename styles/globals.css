@@ -34,6 +34,8 @@ body {
   /* font */
   font-family: 'Noto Sans KR', sans-serif, 'M PLUS 1p', sans-serif, 'Raleway',
     sans-serif;
+  /* background */
+  background-color: var(--bg-color);
 }
 
 a {
@@ -48,4 +50,14 @@ a {
 ul,
 ol {
   list-style: none;
+}
+
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
 }
