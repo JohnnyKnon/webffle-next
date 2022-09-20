@@ -1,5 +1,5 @@
-import Head from 'next/head';
 import { Fragment } from 'react';
+import { MainHeadSetting } from '../components/head-setting';
 import NavBar from '../components/layout/nav-bar';
 import '../styles/globals.css';
 
@@ -7,11 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
       {/* Head */}
-      <Head>
-        <title>Webffle official</title>
-
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+      <MainHeadSetting />
       {/* Components */}
       <>
         <NavBar />
