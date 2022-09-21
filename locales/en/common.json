@@ -1,3 +1,4 @@
 {
-    "logo": "webffle"
+    "logo": "webffle",
+    "notFound" : "Sorry, Page not found."
 }

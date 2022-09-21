@@ -1,0 +1,44 @@
+.errorTextWrapper {
+  /* position */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* flex */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* transfrom */
+  transform: translate(-50%, -50%);
+}
+
+.errorCode {
+  /* font */
+  font-size: 4rem;
+  font-weight: var(--weight-black);
+  color: var(--main-color);
+  /* text */
+  letter-spacing: 15px;
+}
+
+.errorMessage {
+  /* font */
+  font-size: 0.9rem;
+  color: var(--color-dark-grey);
+  /* margin */
+  margin-top: -30px;
+}
+
+@media screen and (min-width: 620px) {
+  .errorCode {
+    /* font */
+    font-size: 3rem;
+  }
+  .errorMessage {
+    /* font */
+    font-size: 1.3rem;
+    /* margin */
+    margin: 0;
+  }
+}
