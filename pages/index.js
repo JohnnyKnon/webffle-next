@@ -10,7 +10,9 @@ export default function Main() {
       {/* Images Slider */}
       <ImageSlider id={classes.imageSliderWrapper} />
       {/* Main Contents Wrapper */}
-      <MainContentWrap></MainContentWrap>
+      <MainContentWrap>
+        <section className={classes.category}></section>
+      </MainContentWrap>
     </MainWrap>
   );
 }
